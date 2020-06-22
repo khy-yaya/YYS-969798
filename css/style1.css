@@ -207,3 +207,13 @@ a {
 .control .control-bottom:hover i {
     color: #333333;
 }
+
+.slideshow .slideshow-right .Rslide img.yasi1 {
+    width: 500px;
+    min-width: auto;
+    height: auto;
+    position: absolute;
+    right: 30%;
+    top: 10%;
+    
+}

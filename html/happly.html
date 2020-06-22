@@ -53,8 +53,31 @@
         <article class="strips__strip">
             <div class="strip__content">
                 <h1 class="strip__title" data-name="Sit"><img src="../img/礼物.png"></h1>
-                <div class="strip__inner-text">
-                    <h2>我们</h2>
+                <div class="strip__inner-text yasi-door">
+                    <section class="yasi-section">
+                        <div class="door-l">
+                            <span class="heart-eye">
+                                <span class="heart"></span>
+                            </span>
+                        </div>
+                        
+                        <div class="door-r">
+                            <span class="heart-eye">
+                                <span class="heart"></span>
+                            </span>
+                        </div>
+                        <nav class="yasi-nav">
+                            <ul class="yasi-ul">
+                                <li class="yasi-li"><img src="../img/yasi20.jpeg" alt="yasi4" class="yasi-door-img"/></li>
+                                <li class="yasi-li"><img src="../img/yasi5.jpeg" alt="yasi5" class="yasi-door-img"/></li>
+                                <li class="yasi-li"><img src="../img/yasi6.jpeg" alt="yasi6" class="yasi-door-img"/></li>
+                                <li class="yasi-li"><img src="../img/yasi12.jpeg" alt="yasi7" class="yasi-door-img"/></li>
+                                <li class="yasi-li"><img src="../img/yasi8.jpeg" alt="yasi8" class="yasi-door-img"/></li>
+                                <li class="yasi-li"><img src="../img/yasi9.jpeg" alt="yasi9" class="yasi-door-img"/></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <!-- <h2>我们</h2>
                     <p>期待跟好久不见的你分享喜怒哀乐与碎碎念</p>
                     <p>那些身边的蓝天和白云那些积攒了很久的想念和牵挂那些一直被吐槽的糗事和小八卦</p>
                     <p> 互相想见面的心情最开心</p>
@@ -63,7 +86,7 @@
                     <p> 风雨里做个大人，阳光下做个孩子</p>
                     <p> 安静努力、不必声张、前方有好人、有惊喜、有久违的感动</p>
                     <p> 世事千帆过，前方终会是温柔和月光</p>
-                    <p>好奇怪，我们怎么有这么多话要说呢，这么多年居然一直都说不完</p>
+                    <p>好奇怪，我们怎么有这么多话要说呢，这么多年居然一直都说不完</p> -->
                     <!-- <p>
                         <a href="#" target="_blank"><i class="fa fa-weixin"></i></a>
                     </p> -->
@@ -71,14 +94,43 @@
             </div>
         </article>
         <article class="strips__strip">
-            <div class="strip__content">
+            <div class="strip__content yasi-img">
                 <h1 class="strip__title" data-name="Amet"><img src="../img/拍合照.png"></h1>
                 <div class="strip__inner-text">
+                    <div class="lanren">
+                        <div class="flip-3d">
+                             <figure>
+                                <img src="../img/yasi1.jpeg" alt="yasi1">
+                                <figcaption>傻子雅思</figcaption>
+                            </figure>
+                        </div>
+                        <div class="flip-3d">
+                            <figure>
+                                <img src="../img/yasi2.jpeg" alt="yasi2">
+                                <figcaption>呆子雅思</figcaption>
+                              </figure>
+                        </div>
+                        <div class="flip-3d">
+                            <figure>
+                                <img src="../img/yasi3.jpeg" alt="yasi3">
+                                <figcaption>爱你爱你</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- <img src="../img/yasi1.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi2.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi3.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi4.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi5.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi6.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi7.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi8.jpeg" alt="" class="yasi">
+                    <img src="../img/yasi9.jpeg" alt="" class="yasi">
                     <h2>天长地久</h2>
                     <p>我们要做一个有深度的姑娘，有脾气的女流氓，有教养的淑女，咱一起祸害四方</p>
                     <p>我骄傲自信，你开朗乐观，姗姗直率独立，我们是最配的姐妹。</p>
                     <p>我不贪心。只有一个小小的愿望：生命中永远有你</p>
-                    <p>告诉你，就凭当初咱的交情，我就敢在你的生命中猖狂一辈子。</p>
+                    <p>告诉你，就凭当初咱的交情，我就敢在你的生命中猖狂一辈子。</p> -->
                     <!-- <p>
                         <a href="#" target="_blank"><i class="fa fa-leaf"></i></a>
                     </p> -->
@@ -100,7 +152,8 @@
                 </div>
             </div>
         </article>
-        <i class="fa fa-close strip__close"></i>
+        <!-- <i class="fa fa-close strip__close"></i> -->
+        <div class="strip__close">x</div>
         <div class="div1"><audio src="../music/Remember - Winner.mp3" controls>
         </audio></div>
         <script>
@@ -128,14 +181,14 @@
         var Expand = function() {
             var tile = $('.strips__strip');
             var tileLink = $('.strips__strip > .strip__content');
-            var tileText = tileLink.find('.strip__inner-text');
+            // var tileText = tileLink.find('.strip__inner-text');
             var stripClose = $('.strip__close');
             var expanded = false;
             var open = function() {
                 var tile = $(this).parent();
                 if (!expanded) {
                     tile.addClass('strips__strip--expanded');
-                    tileText.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
+                    // tileText.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
                     stripClose.addClass('strip__close--show');
                     stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
                     expanded = true;
@@ -144,7 +197,7 @@
             var close = function() {
                 if (expanded) {
                     tile.removeClass('strips__strip--expanded');
-                    tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
+                    // tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
                     stripClose.removeClass('strip__close--show');
                     stripClose.css('transition', 'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)');
                     expanded = false;

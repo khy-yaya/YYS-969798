@@ -80,6 +80,176 @@
     animation-delay: 0.4s;
 }
 
+/* .strips__strip:nth-child(4) .strip__content.yasi-img .yasi {
+    width: 300px;
+    height: auto;
+} */
+
+
+/* ========== 打开窗户 start ========== */
+.yasi-section {
+	width: 510px;
+	height: 510px;
+	border-top: 5px solid #65587f;
+	border-left: 5px solid #f18867;
+	border-right: 5px solid #e85f99;
+	border-bottom: 5px solid #50bda1;
+	margin: 100px auto;
+	position: relative;
+	perspective: 1000px;  
+}
+.door-l, .door-r {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-color: pink;
+	transition: all 1s; 
+	z-index: 99;
+}
+.door-l {
+	left: 0;
+	transform-origin: left;
+	border-right: 1px solid #fff;
+}
+.door-r {
+	right: 0;
+	transform-origin: right;
+	border-left: 1px solid #fff;
+}
+.heart-eye {
+	position: absolute;
+	top: 50%;
+	animation: pulse 1s ease-out infinite;
+}
+.heart-eye:last-child {
+	left: auto;
+	right: 120px;
+	animation: pulse 1s ease-out infinite;
+}
+.heart {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: #e25d5d;
+	transform: rotate(-45deg);
+}
+.heart:before,
+.heart:after {
+	content: "";
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #e25d5d;
+}
+.heart:before {
+	top: -16px;
+	left: 0;
+}
+.heart:after {
+	left: 16px;
+	top: 0;
+}
+@keyframes pulse {
+	30% {
+		transform: scale(1.2, 1.2) ;
+	}
+	70% {
+		transform: scale(1, 1) ;
+	}
+}
+
+.yasi-section:hover .door-l {
+	transform: translateX(-150px);
+}
+.yasi-section:hover .door-r {
+	transform: translateX(150px);
+}
+ul.yasi-ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav.yasi-nav {
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+}
+nav.yasi-nav li.yasi-li {
+	float: left;
+}
+img.yasi-door-img{
+	width: 500px;
+	height: 500px;
+}
+nav.yasi-nav ul.yasi-ul {
+	width: 1800px;
+	animation: moving 12s linear infinite alternate;
+}
+@keyframes moving {
+	form {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-1500px);
+	}
+}
+nav.yasi-nav:hover ul.yasi-ul {
+	animation-play-state:paused; 
+}
+
+/* =========== end =============== */
+
+/* ========== 图片翻转 start =============== */
+
+.flip-3d { 
+    perspective: 1200px; width: 33%; float: left;  
+}
+.flip-3d figure { 
+    position: relative; 
+    transform-style: preserve-3d; 
+    transition: 1s transform;
+    font-size: 1.6rem;
+    margin:25px;
+}
+.flip-3d figure img { 
+    width: 100%; height: auto; 
+}
+.flip-3d figure figcaption { 
+    position: absolute; 
+    width: 100%; height: 100%; top: 0; 
+    transform: rotateY(.5turn) translateZ(1px); 
+    background: rgba(255,255,255,0.9); 
+    text-align: center; 
+    padding-top: 45%; 
+    opacity: 0.6; 
+    transition: 1s .5s opacity; 
+}
+.flip-3d:hover figure { transform: rotateY(.5turn); }
+.flip-3d:hover figure figcaption { opacity: 1; }
+.flip-3d figure:after { 
+    content: " ";
+    display: block;
+    height: 8vw;
+    width: 100%; 
+    transform: rotateX(90deg); 
+    background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+}
+@media screen and (max-width: 800px) { 
+#flip-3d { perspective-origin: center top; }
+    div#flip-3d figure { 
+    float: none; 
+    width: 50%; 
+    margin: 0 auto; 
+    margin-bottom: 12vw; 
+}
+.flip-3d figure figcaption{font-size: 0.8rem;}
+    div#flip-3d figure:last-child { display: none; }
+}
+
+/* =========== end ============ */
+
 .strips__strip:nth-child(5) .strip__content {
     background: #F24B4B;
     -webkit-transform: translate3d(100%, 0, 0);
@@ -246,6 +416,7 @@
     top: 3vw;
     opacity: 0;
     z-index: 10;
+    font-size: 40px;
     -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     cursor: pointer;
