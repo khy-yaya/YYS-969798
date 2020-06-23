@@ -25,10 +25,57 @@
             <div class="strip__content">
                 <h1 class="strip__title" data-name="Ipsum"><img src="../img/情话.png"></h1>
                 <div class="strip__inner-text">
-                    <h2>爱你</h2>
-                    <p>最让人感动的友谊是我希望永远和你在一起，这样我感到很幸福</p>
-                    <p>但我希望你过上更好的生活且不虚此行，即使我们分开也没有关系</p>
-                    <p>而且我等着当你的伴娘，已经等了十年了。。。</p>
+                    <div class="wrap">
+                        <!--    /*包裹所有元素的容器*/-->
+                        <div class="cube">
+                            <!--前面图片 -->
+                            <div class="out_front">
+                                <img src="../img/xinyasi1.jpeg" class="pic" />
+                            </div>
+                            <!--后面图片 -->
+                            <div class="out_back">
+                                <img src="../img/xinyasi2.jpeg" class="pic" />
+                            </div>
+                            <!--左图片 -->
+                            <div class="out_left">
+                                <img src="../img/xinyasi3.jpeg" class="pic" />
+                            </div>
+                            <div class="out_right">
+                                <img src="../img/xinyasi4.jpeg" class="pic" />
+                            </div>
+                            <div class="out_top">
+                                <img src="../img/xinyasi5.jpeg" class="pic" />
+                            </div>
+                            <div class="out_bottom">
+                                <img src="../img/xinyasi6.jpeg" class="pic" />
+                            </div>
+                            <!--小正方体 -->
+                            <span class="in_front">
+                                <img src="../img/xinyasi7.jpeg" class="in_pic" />
+                            </span>
+                            <span class="in_back">
+                                <img src="../img/yasi1.jpeg" class="in_pic" />
+                            </span>
+                            <span class="in_left">
+                                <img src="../img/yasi8.jpeg" class="in_pic" />
+                            </span>
+                            <span class="in_right">
+                                <img src="../img/yasi9.jpeg" class="in_pic" />
+                            </span>
+                            <span class="in_top">
+                                <img src="../img/yasi10.jpeg" class="in_pic" />
+                            </span>
+                            <span class="in_bottom">
+                                <img src="../img/yasi15.jpeg" class="in_pic" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="yasi-love">
+                        <h2>爱你</h2>
+                        <p>最让人感动的友谊是我希望永远和你在一起，这样我感到很幸福</p>
+                        <p>但我希望你过上更好的生活且不虚此行，即使我们分开也没有关系</p>
+                        <p>而且我等着当你的伴娘，已经等了十年了。。。</p>
+                    </div>
                     <!-- <p>
                         <a href="#" target="_blank"><i class="fa fa-qq"></i></a>
                     </p> -->
@@ -37,8 +84,12 @@
         </article>
         <article class="strips__strip">
             <div class="strip__content">
+                <div id="stars">
+                    <div class="star" style="top: 0px;left: 500px"></div>
+                </div>
                 <h1 class="strip__title" data-name="Dolor"><img src="../img/时间.png"></h1>
                 <div class="strip__inner-text">
+                    
                     <h2>愿做你的一颗星</h2>
                     <p>每个人都会有一个星星兜，差不多的人生中，时而也会有闪闪发光的事情</p>
                     <p>所以你要留意去抓住它，好好装在自己的星星兜里</p>
@@ -60,7 +111,6 @@
                                 <span class="heart"></span>
                             </span>
                         </div>
-                        
                         <div class="door-r">
                             <span class="heart-eye">
                                 <span class="heart"></span>
@@ -213,7 +263,30 @@
             };
         }();
         Expand.init();
-    </script>
+        var stars = document.getElementById('stars')
+
+        // js随机生成流星
+        for (var j=0;j<30;j++) {
+            var newStar = document.createElement("div")
+            newStar.className = "star"
+            newStar.style.top = randomDistance(500, -100) + 'px'
+            newStar.style.left = randomDistance(1300, 300) + 'px'
+            stars.appendChild(newStar)
+        }
+
+        // 封装随机数方法
+        function randomDistance (max, min) {
+            var distance = Math.floor(Math.random() * (max - min + 1) + min)
+            return distance
+        }
+        var star = document.getElementsByClassName('star')
+
+        // 给流星添加动画延时
+        for (var i = 0, len = star.length; i < len; i++)
+        {
+            star[i].style.animationDelay = i % 6 == 0 ? '0s' : i * 0.8 + 's'
+        }
+        </script>
 </body>
 
 </html>
